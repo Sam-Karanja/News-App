@@ -1,41 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% if title %}
-  <title>{{ title }}</title>
-  {% else %}
-  <title>The Nightngale News App</title>
-  {% endif %}
-</head>
-<body>
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
 
-  <h3> Top Headlines Sources </h3>
-  <h1> Top Headlines Sources</h1>
-  <!-- general = get_news('general')
-  business = get_news('business')
-  entertainment = get_news('entertainment')
-  health = get_news('health')
-  science = get_news('science')
-  sports = get_news('sports')
-  technology = get_news('technology') -->
+<!--Content block -->
+{% block content %}
+<h1> Top Headlines Sources</h1>
 
-  <!--General Section-->
+<!--General Section-->
+<div>
   <h3> General News Sources</h3>
   <ul>
-    {% for general_news in general %}
-    <li>{{ general_news.name }} - {{ general_news.description }}</li>
-    {% endfor %}
+    {{ macro.displayNewsList(general)}}
   </ul>
+</div>
 
-   <!--Business Section-->
-   <h3> Business News Sources</h3>
-   <ul>
-     {% for business_news in business %}
-     <li>{{ business_news.name }} - {{ business_news.description }}</li>
-     {% endfor %}
 
-</body>
-</html> 
+ <!--Business Section-->
+<div>
+  <h3> Business News Sources</h3>
+  <ul>
+    {{ macro.displayNewsList(business)}}
+  </ul>
+</div>
+
+ <!--Entertainment Section-->
+ <div>
+  <h3> Entertainment News Sources</h3>
+  <ul>
+    {{ macro.displayNewsList(entertainment)}}
+  </ul>
+</div>
+
+ <!--Health Section-->
+ <div>
+  <h3> Health News Sources</h3>
+  <ul>
+    {{ macro.displayNewsList(health)}}
+  </ul>
+</div>
+
+ <!--Science Section-->
+ <div>
+  <h3> Science News Sources</h3>
+  <ul>
+    {{ macro.displayNewsList(science)}}
+  </ul>
+</div>
+
+ <!--Sports Section-->
+ <div>
+  <h3> Sports News Sources</h3>
+  <ul>
+    {{ macro.displayNewsList(sports)}}
+  </ul>
+</div>
+
+ <!--Technology Section-->
+ <div>
+  <h3> Technology News Sources</h3>
+  <ul>
+    {{ macro.displayNewsList(technology)}}
+  </ul>
+</div>
+{% endblock%} 
