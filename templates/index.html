@@ -11,6 +11,13 @@
   {% endif %}
 </head>
 <body>
+  <!--Top Headlines Section-->
+  <h3> Top Headlines </h3>
+  <ul>
+    {% for top_headline in top_headlines%}
+    <li>{{ top_headline.name }} - {{ top_headline.description }}</li>
+    {% endfor %}
+  </ul>
 
 </body>
 </html> 
