@@ -1,4 +1,3 @@
-from re import I
 from app import app 
 import urllib.request, json
 form .models import news
@@ -36,28 +35,25 @@ def get_news(category):
 
   return news_sources
 
+def get_articles(id):
+  '''
+  Function that gets the json response to our url request
+  '''
+  get_news_articles_url = news_base_url.format(id, apiKey)
 
-  def get_articles(id):
-  get_articles_url = base_url.format(id, apiKey)
+  with urllib.request.urlopen(get_news_articles_url) as url:
 
-  with urllib.request.urlopen(get_articles_url) as url:
-    news_articles_details = url.read()
-    news_articles_details_response = json.loads(news_articles_details)
+    get_news_articles_data = url.read()
+    get_news_articles_response = json.loads(get_news_articles_data)
 
-    news_articles_object = None
+    news_articles = None
 
-    if news_articles_details_response:
-      id = news_articles_details_response.get("source.id")
-      name = news_articles_details_response.get("source.name")
-      title = news_articles_details_response.get("title")
-      description = news_articles_details_response.get("description")
-      url = news_articles_details_response.get("url")
-      urlToImage = news_articles_details_response.get("urlToImage")
-      publishedAt = news_articles_details_response.get("publishedAt")
+    if get_news_articles_response['articles']:
+      news_articles_list = get_news_articles_response['articles']
+      news_articles = process_articles(news_articles_list)
 
-      news_articles_object = NewsArticle(id, name, title, description, url, urlToImage, publishedAt)
+  return news_articles
 
-  return news_articles_object
 
 
 
@@ -85,6 +81,33 @@ def process_sources(news_list):
       news_object = News(id, name, description, url, category, language, country )
       news_results.append(news_object)
 
-    return  news_results
+ return news_results
+
+
+def process_articles(news_articles_list):
+  '''
+  Function that processes the news articles results and transforms them to a list of Objects
+  Args:
+    news_articles_list: A list of dictionaries that contain news articles details
+  Returns:
+    news_articles_results: A list of news articles objects
+  '''
+
+  news_articles_results = []
+
+  for news_article in news_articles_list:
+    id = news_article.get("source[id]")
+    name = news_article.get("source[name]")
+    title = news_article.get("title")
+    description = news_article.get("description")
+    url = news_article.get("url")
+    urlToImage = news_article.get("urlToImage")
+    publishedAt = news_article.get("publishedAt")
+
+    if urlToImage:
+      news_article_object = NewsArticle(id, name, title, description, url, urlToImage, publishedAt)
+      news_articles_results.append(news_article_object)
+
+  return news_articles_results 
 
 

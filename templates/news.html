@@ -1,1 +1,28 @@
-<h1> Hello News {{ id }} </h1>
+{% extends 'base.html' %}
+
+<!--Content block-->
+{% block content %}
+<!--image background-->
+
+<div class="container">
+  {% for news_article in news_articles %}
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div>
+      <div>
+        <h3>{{ news_article.title}}</h3>
+      </div>
+     
+      <div>
+        <h5>Published At: {{ news_article.publishedAt }}</h5>
+        <img src="{{ news_article.urlToImage }}" alt="{{ news_article.title }}">
+        <p>{{news_article.description}}</p>
+        <a href="{{news_article.url}}" alt="{{ news_article.title }}">Read the full story here!</a>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+
+
+{% endblock %} 
