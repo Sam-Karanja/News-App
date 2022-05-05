@@ -21,7 +21,7 @@ class NewsAarticle:
     '''
 
     def__init__(self, id, name, title, description, url, urlToImage, publishedAt):
-        self.id = name
+        self.id = id
         self.name = name
         self.title = title
         self.description = description
