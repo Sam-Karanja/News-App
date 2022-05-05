@@ -1,0 +1,23 @@
+body{
+    background-color: #191923;
+    text-align: center;
+}
+
+h1, h2, h3{
+    color: #F39237
+}
+
+.title-div{
+    padding: 0.5em;
+    background-color: #BF1363 ;
+}
+
+.news-card{
+    background-color: #FBFEF9;
+    color: #191923;
+    border-radius: 2px;
+    border:#191923;
+    padding: 1em;
+    margin: 1em;
+}
+
