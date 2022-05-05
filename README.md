@@ -1,11 +1,11 @@
 # Sam News App
-Parents are busy workers and they get home really late. They always miss the news and very frustrated since theycan't keep with up with current affairs. the Nightngale News App is an application that enables users to  list and preview news articles from various sources. 
+Parents are busy workers and they get home really late. They always miss the news and very frustrated since theycan't keep with up with current affairs.Sam News App is an application that enables users to  list and preview news articles from various sources. 
 
 ## Author
 [Samuel Karanja](https://github.com/Sam-Karanja/)
 
 ### Demo
-[Sam News App]()
+[Sam News App](https://tranquil-crumble-20d3e6.netlify.app/)
 
 ### User Stories
 1. As a user, I would like to see various news sources on the homepage of the application.
