@@ -1,9 +1,9 @@
-from flask import render_template
-from app import app
-from.request import get_news, get_articles
+from flask import render_template,url_for
+from . import main
+from .request import get_news, get_articles
 
 # Views
-@app.route('/')
+@main.route('/')
 def index():
   '''
   View root page function that returns the index page and its data
@@ -21,7 +21,7 @@ def index():
   title = "Sam News App"
   return render_template('index.html', title = title,top_headlines = top_headlines)
 
-@app.route('/article/<id>')
+@main.route('/article/<id>')
 def news(id):
   '''
   View news page function that returns the articles   pages and its data

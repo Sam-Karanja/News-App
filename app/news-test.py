@@ -1,7 +1,5 @@
 import unittest
-from models import news
-News = news.News
-News = news.NewsSource
+form app.models import  NewsSource
 
 class NewsTest (unittest.TestCase):
     '''
@@ -13,11 +11,11 @@ class NewsTest (unittest.TestCase):
         '''
         set up method that will run before every test
         '''
-        self.new_news = News("abc-news", "ABS News", "Your trusted sourcr for breaking news, analysis, exclusive interviews,headlines and videos ata ABC News.com",  "https://abcnews.go.com", "general", "en", "us")
+        self.new_news = NewsSource("abc-news", "ABS News", "Your trusted sourcr for breaking news, analysis, exclusive interviews,headlines and videos ata ABC News.com",  "https://abcnews.go.com", "general", "en", "us")
 
 
     def test_instance(self):
-      self.assertTrue(isinstance(self.news_news, News))
+      self.assertTrue(isinstance(self.news_news, NewsSource))
 
     def test_init(self):
         '''
@@ -34,6 +32,3 @@ class NewsTest (unittest.TestCase):
 
 
 
-
-    if __name__ == '__main__':
-        uinittest.main()
