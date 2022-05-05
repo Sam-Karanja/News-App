@@ -96,8 +96,8 @@ def process_articles(news_articles_list):
   news_articles_results = []
 
   for news_article in news_articles_list:
-    id = news_article.get("source[id]")
-    name = news_article.get("source[name]")
+    id = news_article.get("sourc.id")
+    name = news_article.get("source.name")
     title = news_article.get("title")
     description = news_article.get("description")
     url = news_article.get("url")

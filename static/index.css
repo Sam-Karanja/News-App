@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant:wght@300&display=swap');
+
 body{
     background-color: #191923;
     text-align: center;
 }
 
+.news-body{
+    text-align: center;
+}
+
 h1, h2, h3{
-    color: #F39237
+    color: #F39237;
+    text-align: center;
+    font-family:'Cinzel', serif;
 }
 
 .title-div{
@@ -20,4 +28,22 @@ h1, h2, h3{
     padding: 1em;
     margin: 1em;
 }
+
+img {
+    border-radius: 4px;
+    width: 300px;
+  }
+  
+  .article-card {
+    color: #191923;
+    padding: 1em;
+    margin: 2em;
+    border-radius: 2px;
+    border:#191923;
+    background-color:#F39237;
+  }
+  
+  .article-h3 {
+    color:#191923;
+} 
 
