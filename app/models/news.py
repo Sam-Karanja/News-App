@@ -1,6 +1,6 @@
 from inspect import isdatadescriptor
 
-class News:
+class NewsSource:
     '''
     News class to define news objects
     '''
@@ -13,3 +13,18 @@ class News:
         self.category = category
         self.language = language
         self.country = country
+
+
+class NewsAarticle:
+    '''
+    News articles class defines new articles objects
+    '''
+
+    def__init__(self, id, name, title, description, url, urlToImage, publishedAt):
+        self.id = name
+        self.name = name
+        self.title = title
+        self.description = description
+        self.url = url
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
