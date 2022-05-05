@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 
+<!--Styles block -->
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+
+{% endblock %}
+
 <!--Content block -->
 {% block content %}
-<h1> Top Headlines Sources</h1>
+<div class="container">
+    <h1>Top Headlines Sources</h1>
+
 
 <!--General Section-->
-<div>
+<div class = "container">
   <h3> General News Sources</h3>
   <ul>
     {{ macro.displayNewsList(general)}}
@@ -15,7 +24,7 @@
 
 
  <!--Business Section-->
-<div>
+<div class="container">
   <h3> Business News Sources</h3>
   <ul>
     {{ macro.displayNewsList(business)}}
@@ -23,7 +32,7 @@
 </div>
 
  <!--Entertainment Section-->
- <div>
+ <div class="container">
   <h3> Entertainment News Sources</h3>
   <ul>
     {{ macro.displayNewsList(entertainment)}}
@@ -31,7 +40,7 @@
 </div>
 
  <!--Health Section-->
- <div>
+ <div class="container">
   <h3> Health News Sources</h3>
   <ul>
     {{ macro.displayNewsList(health)}}
@@ -39,7 +48,7 @@
 </div>
 
  <!--Science Section-->
- <div>
+ <div class="container">
   <h3> Science News Sources</h3>
   <ul>
     {{ macro.displayNewsList(science)}}
@@ -47,7 +56,7 @@
 </div>
 
  <!--Sports Section-->
- <div>
+ <div class="container">
   <h3> Sports News Sources</h3>
   <ul>
     {{ macro.displayNewsList(sports)}}
@@ -55,7 +64,7 @@
 </div>
 
  <!--Technology Section-->
- <div>
+ <div class="container">
   <h3> Technology News Sources</h3>
   <ul>
     {{ macro.displayNewsList(technology)}}
