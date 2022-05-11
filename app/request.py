@@ -1,4 +1,5 @@
-from .models import NewsArticle, NewsSource
+from .models.news import NewsArticle, NewsSource
+import urllib.request,json
 
 
 # Getting api key
@@ -9,6 +10,7 @@ apiKey = None
 #Getting base urls
 base_url = None
 news_base_url = None
+apikey =  None
 
 def configure_request(app):
   global apiKey, base_url, news_base_url
@@ -77,7 +79,7 @@ def process_sources(news_list):
     country = news_item.get("country")
 
     if description:
-     news_object = NewsSource(id, name, description, url, category, language, country )
+      news_object = NewsSource(id, name, description, url, category, language, country )
       news_results.append(news_object)
 
   return news_results
