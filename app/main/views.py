@@ -18,7 +18,8 @@ def index():
   sports = get_news('sports')
   technology = get_news('technology')
 
-  title = "Sam News App"
+
+  title="Sam News App"
   return render_template('index.html', title = title, general = general, business = business, health = health , science = science, sports = sports)
 
 @main.route('/article')

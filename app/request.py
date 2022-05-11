@@ -32,13 +32,13 @@ def get_news(category):
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
 
-    news_sources = None
+        news_sources = None
 
-    if get_news_response['sources']:
-      news_sources_list = get_news_response['sources']
-      news_sources = process_sources(news_sources_list)
+        if get_news_response['sources']:
+            news_sources_list = get_news_response['sources']
+            news_sources = process_sources(news_sources_list)
 
-    return news_sources()
+    return news_sources
 
 def get_articles():
   '''
@@ -101,7 +101,7 @@ def process_articles(news_articles_list):
   news_articles_results = []
 
   for news_article in news_articles_list:
-    id = news_article.get("sourc.id")
+    id = news_article.get("source.id")
     name = news_article.get("source.name")
     title = news_article.get("title")
     description = news_article.get("description")
