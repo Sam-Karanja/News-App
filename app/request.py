@@ -1,5 +1,7 @@
 from .models.news import NewsArticle, NewsSource
 import urllib.request,json
+from . import create_app
+app = create_app('development')
 
 
 # Getting api key
@@ -8,9 +10,11 @@ apiKey = None
 
 
 #Getting base urls
-base_url = None
-news_base_url = None
-apikey =  None
+base_url='https://newsapi.org/v2/top-headlines/sources?category={}&apiKey={}'
+
+news_base_url='https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
+
+apikey='4799a361e7c049f4b4279a2aeae24379'
 
 def configure_request(app):
   global apiKey, base_url, news_base_url
@@ -26,7 +30,7 @@ def get_news(category):
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
-    get_news_response = json.loads(get_news_data)
+        get_news_response = json.loads(get_news_data)
 
     news_sources = None
 
@@ -34,13 +38,13 @@ def get_news(category):
       news_sources_list = get_news_response['sources']
       news_sources = process_sources(news_sources_list)
 
-      return news_sources()
+    return news_sources()
 
-def get_articles(id):
+def get_articles():
   '''
   Function that gets the json response to our url request
   '''
-  get_news_articles_url = news_base_url.format(id, apiKey)
+  get_news_articles_url = news_base_url.format(apiKey)
 
   with urllib.request.urlopen(get_news_articles_url) as url:
 
@@ -78,7 +82,7 @@ def process_sources(news_list):
     language = news_item.get("language")
     country = news_item.get("country")
 
-    if description:
+    if language == 'en':
       news_object = NewsSource(id, name, description, url, category, language, country )
       news_results.append(news_object)
 

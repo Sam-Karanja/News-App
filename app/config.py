@@ -6,7 +6,7 @@ class Config:
   '''  
   NEWS_API_BASE_URL = 'https://newsapi.org/v2/top-headlines/sources?category={}&apiKey={}'
   NEWS_ARTICLES_BASE_URL = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
-  NEWS_API_KEY = os.environ.get("NEWS_API_KEY")
+  NEWS_API_KEY = '4799a361e7c049f4b4279a2aeae24379'
 
 class ProdConfig(Config):
   '''
@@ -25,7 +25,7 @@ class DevConfig(Config):
     Config: The parent configuration class with General configuration settings
   '''
 
-DEBUG = True
+  DEBUG = True
 
 config_options = {
   'development': DevConfig,
