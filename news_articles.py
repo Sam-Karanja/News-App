@@ -11,7 +11,7 @@ class NewsArticleTest(unittest.TestCase):
         '''
         setup method that will run before every test
         '''
-        self.new_news_article = NewsArticle("bbc-news", "BBC Newss", "Jacky Hunt-Broersma: The cancer survivor who ran 104 marathons in 104 days", "Aged 26, "Aged 26, Jacky Hunt-Broersma lost her left leg to cancer - now she has set an unofficial world record.", "http://www.bbc.co.uk/news/world-us-canada-61299527", "https://ichef.bbci.co.uk/news/1024/branded_news/5D65/production/_124390932_jacky1.jpg", "2022-05-02T21:52:21.8015368Z")
+        self.new_news_article = NewsArticle(""bbc-news", "BBC Newss", "Jacky Hunt-Broersma: The cancer survivor who ran 104 marathons in 104 days", "Aged 26, "Aged 26, Jacky Hunt-Broersma lost her left leg to cancer - now she has set an unofficial world record.", "http://www.bbc.co.uk/news/world-us-canada-61299527", "https://ichef.bbci.co.uk/news/1024/branded_news/5D65/production/_124390932_jacky1.jpg", "2022-05-02T21:52:21.8015368Z")
 
     def test_instance(self):
     self.assertTrue(isinstance(self.new_news_article, NewsArticle))
