@@ -21,7 +21,7 @@ class NewsTest (unittest.TestCase):
         '''
         test init case to test if the object is initialized properly
         '''
-            self.assertEqual(self.new_news.id, "abc-news")
+    self.assertEqual(self.new_news.id, "abc-news")
     self.assertEqual(self.new_news.name, "ABC News")
     self.assertEqual(self.new_news.description, "Your trusted source for breaking news, analysis, exclusive interviews, headlines, and videos at ABCNews.com.")
     self.assertEqual(self.new_news.url, "https://abcnews.go.com")
